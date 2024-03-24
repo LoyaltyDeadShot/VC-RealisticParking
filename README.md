@@ -21,7 +21,8 @@ Ox_Inventory
                 end
             },
         }
-    }, ```
+    },
+```
 
 
     SQL
