@@ -27,7 +27,8 @@ Ox_Inventory
 
     SQL
 
-   ``` CREATE TABLE `owned_vehicles` (
+```
+CREATE TABLE `owned_vehicles` (
   `owner` varchar(60) DEFAULT NULL,
   `plate` varchar(12) NOT NULL,
   `vehicle` longtext DEFAULT NULL,
@@ -44,4 +45,5 @@ Ox_Inventory
   `h` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT '0',
   `health` int(11) DEFAULT 0,
   `miles` varchar(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;```
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
