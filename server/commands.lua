@@ -1,3 +1,5 @@
+Inventory = exports.ox_inventory
+ESX = exports.es_extended:getSharedObject()
 local function addMessage(target, type, text)
     local red <const> = {255, 0, 0}
     local green <const> = {0, 255, 0}
@@ -24,6 +26,7 @@ ESX.RegisterCommand({'addkey'}, 'admin', function(xPlayer, args, showError)
         return addMessage(xPlayer.source, 'error', locale('command_block_key_invalid'))
     end
     local success <const> = AddKeyToPlayerFromVehicle(vehicle, args.playerId, args.count, args.blockKey == 1 and true or false)
+    print(vehicle, args.playerId, args.count, args.blockKey)
     if not (success) then
         return addMessage(xPlayer.source, 'error', locale('command_key_not_found'))
     end
@@ -32,6 +35,30 @@ end, false, {help = locale('command_addkeytoplayer'), arguments = {
     {name = 'playerId', help = locale('command_help_playerID'), type = 'number'},
     {name = 'count', help = locale('command_help_count'), type = 'number'},
     {name = 'blockKey', help = locale('command_help_block_key'), type = 'number'}
+}})
+
+
+ESX.RegisterCommand({'addkeyplate'}, 'admin', function(xPlayer, args, showError)
+    local player <const> = GetPlayerPed(args.playerId)
+    if not (player) or not (IsPedAPlayer(player)) then
+        return addMessage(xPlayer.source, 'error', locale('command_player_not_found'))
+    end
+    local plate <const> = args.plate
+
+    if (args.blockKey < 0) or (args.blockKey > 1) then
+        return addMessage(xPlayer.source, 'error', locale('command_block_key_invalid'))
+    end
+    local success <const> = AddKeyToPlayerWithoutVehicle(plate, args.playerId, args.count, args.blockKey == 1 and true or false)
+    print(vehicle, args.playerId, args.count, args.blockKey)
+    if not (success) then
+        return addMessage(xPlayer.source, 'error', locale('command_key_not_found'))
+    end
+    addMessage(xPlayer.source, 'success', locale('command_key_has_been_added'))
+end, false, {help = locale('command_addkeytoplayer'), arguments = {
+    {name = 'plate', help = 'Tablica', type = 'string'},
+    {name = 'playerId', help = locale('command_help_playerID'), type = 'number'},
+    {name = 'count', help = locale('command_help_count'), type = 'number'},
+    {name = 'blockKey', help = locale('command_help_block_key'), type = 'number'},
 }})
 
 ESX.RegisterCommand({'removekey'}, 'admin', function(xPlayer, args, showError)
