@@ -190,3 +190,10 @@ exports('GetKeyCountFromVehicle', GetKeyCountFromVehicle)
 exports('GetKeyCountFromPlate', GetKeyCountFromPlate)
 exports('RemoveKeysFromPlayersFromVehicle', RemoveKeysFromPlayersFromVehicle)
 exports('RemoveKeysFromPlayersFromPlate', RemoveKeysFromPlayersFromPlate)
+
+
+RegisterNetEvent('Vlore-Kluczyki:AddKeyToPlayerWithoutVehicle', function(a)
+
+    AddKeyToPlayerWithoutVehicle(a,source, 1,0)
+
+end)
