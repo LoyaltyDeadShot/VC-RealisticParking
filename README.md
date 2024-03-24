@@ -25,7 +25,7 @@ Ox_Inventory
 ```
 
 
-    SQL
+DataBase SQL
 
 ```
 CREATE TABLE `owned_vehicles` (
