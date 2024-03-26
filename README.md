@@ -1,6 +1,7 @@
 Ox_Inventory
 
-```['keys'] = {
+```
+['keys'] = {
         label = 'Car Key',
         description = "Your car keys, better dont drive after drinking",
         weight = 5,
