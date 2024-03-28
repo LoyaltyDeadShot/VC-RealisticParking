@@ -48,3 +48,6 @@ CREATE TABLE `owned_vehicles` (
   `miles` varchar(10) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 ```
+
+
+DISCORD = https://discord.gg/mPHu4sqhwG
